@@ -64,6 +64,7 @@ public class CreateFileDialog extends JDialog {
                             "your must enter class name",
                     "Class Name is null");
         } else {
+            buttonOK.setEnabled(false);
             new CreateFile(e, textField.getText(), type).execute();
             dispose();
         }
