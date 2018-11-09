@@ -1,0 +1,25 @@
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")
+package ${PACKAGE_NAME};
+#end
+import com.iflytek.elpmobile.framework.mvp.MvpBasePresenter;
+import com.iflytek.elpmobile.framework.mvp.MvpView;
+/**
+ * Author: ${USER}
+ * Created on ${DATE}
+ */
+public class  ${NAME}Contract  {
+
+    interface I${NAME}Model {
+        //TODO add abstract method for Model
+    }
+
+    interface I${NAME}View extends MvpView {
+        //TODO add abstract method related with view
+    }
+
+    static abstract class ${NAME}BasePresenter extends MvpBasePresenter<I${NAME}View> {
+        //TODO add abstract method for Presenter
+
+    }
+
+}
