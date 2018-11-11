@@ -1,15 +1,18 @@
 package com.example.UI;
 
+
 import javax.swing.*;
 
 public class ConfigFileDialog {
-    private JPanel panel1;
-    private JTextField tvView;
-    private JButton btView;
-    private JTextField tvPresenter;
-    private JButton btPresenter;
-    private JTextField tvActivity;
-    private JButton btActivity;
+    public JPanel contentPanel;
+    public JTextField tvView;
+    public JButton btView;
+    public JTextField tvPresenter;
+    public JButton btPresenter;
+    public JTextField tvActivity;
+    public JButton btActivity;
+    public JTextField tvFragment;
+    public JButton btFragment;
 
     private void createUIComponents() {
         // TODO: place custom component creation code here

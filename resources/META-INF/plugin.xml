@@ -24,12 +24,15 @@
     <depends>com.intellij.modules.lang</depends>
 
 
+    <!--<extensions defaultExtensionNs="com.intellij">-->
+        <!--&lt;!&ndash; Add your extensions here &ndash;&gt;-->
+        <!--<internalFileTemplate name="Text1"/>-->
+    <!--</extensions>-->
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-        <internalFileTemplate name="Text1"/>
         <applicationConfigurable instance="com.example.config.FileConfig"/>
     </extensions>
-
+    <application-components>
+    </application-components>
     <actions>
         <!-- Add your actions here -->
         <action id="MvpPlugin.CreateFile" class="com.example.action.CreateFileAction" text="NewMVPFile"
