@@ -1,13 +1,15 @@
 #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")
 package ${PACKAGE_NAME};
 #end
-import com.iflytek.elpmobile.framework.mvp.MvpFragment;
+#if(${FRAGMENT} && ${FRAGMENT} !="")
+import ${FRAGMENT};
+#end
 import android.support.annotation.NonNull;
 /**
  * Author: ${USER}
  * Created on ${DATE}
  */
-public class ${NAME}Fragment extends MvpFragment<${NAME}Contract.I${NAME}View, ${NAME}Contract.${NAME}BasePresenter> implements ${NAME}Contract.I${NAME}View{
+public class ${NAME}Fragment extends ${FRAGMENT_NAME}<${NAME}Contract.I${NAME}View, ${NAME}Contract.${NAME}BasePresenter> implements ${NAME}Contract.I${NAME}View{
 
     @NonNull
     @Override

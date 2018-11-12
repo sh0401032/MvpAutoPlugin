@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.iflytek.huanshao.MvpPlugin</id>
-    <name>MvpPlugin</name>
+    <name>MvpAutoPlugin</name>
     <version>1.0</version>
     <vendor email="" url=""></vendor>
 
@@ -28,11 +28,11 @@
         <!--&lt;!&ndash; Add your extensions here &ndash;&gt;-->
         <!--<internalFileTemplate name="Text1"/>-->
     <!--</extensions>-->
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationConfigurable instance="com.example.config.FileConfig"/>
-    </extensions>
-    <application-components>
-    </application-components>
+    <!--<extensions defaultExtensionNs="com.intellij">-->
+        <!--<applicationConfigurable instance="com.example.config.FileConfig"/>-->
+    <!--</extensions>-->
+    <!--<application-components>-->
+    <!--</application-components>-->
     <actions>
         <!-- Add your actions here -->
         <action id="MvpPlugin.CreateFile" class="com.example.action.CreateFileAction" text="NewMVPFile"

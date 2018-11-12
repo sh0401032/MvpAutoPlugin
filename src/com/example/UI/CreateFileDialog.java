@@ -31,10 +31,6 @@ public class CreateFileDialog extends JDialog {
     private JButton bt_activity;
     private JTextField tv_fragment;
     private JButton bt_fragment;
-    private int type = -1;
-    private final static int TYPE_ACTIVITY = 0;
-    private final static int TYPE_FRAGMENT = 1;
-
     public PropertiesComponent state;
     public Project mProject;
     public TreeClassChooserFactory classChooserFactory;
@@ -44,13 +40,12 @@ public class CreateFileDialog extends JDialog {
         setTitle("New Mvp File");
         setContentPane(contentPane);
         setModal(true);
-        setMinimumSize(new Dimension(260, 180));
+        setMinimumSize(new Dimension(850, 400));
         setLocationRelativeTo(null);
         getRootPane().setDefaultButton(buttonOK);
-        activityRadioButton.addActionListener(e1 -> onSelectModel(e, TYPE_ACTIVITY));
-        fragmentRadioButton.addActionListener(e1 -> onSelectModel(e, TYPE_FRAGMENT));
+        activityRadioButton.addActionListener(e1 -> onSelectModel(TYPE_ACTIVITY));
+        fragmentRadioButton.addActionListener(e1 -> onSelectModel(TYPE_FRAGMENT));
         activityRadioButton.setSelected(true);
-        type = TYPE_ACTIVITY;
         buttonOK.addActionListener(e1 -> onOK(e));
 
         buttonCancel.addActionListener(e1 -> onCancel());
@@ -73,10 +68,10 @@ public class CreateFileDialog extends JDialog {
                 JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void onSelectModel(AnActionEvent event, int type) {
-        activityRadioButton.setSelected(type == TYPE_ACTIVITY);
-        fragmentRadioButton.setSelected(type == TYPE_FRAGMENT);
-        this.type = type;
+    private void onSelectModel(String type) {
+        activityRadioButton.setSelected(TYPE_ACTIVITY.equals(type));
+        fragmentRadioButton.setSelected(TYPE_FRAGMENT.equals(type));
+        state.setValue(TYPE, type);
     }
 
     private void onOK(AnActionEvent e) {
@@ -86,7 +81,7 @@ public class CreateFileDialog extends JDialog {
                     "Class Name is null");
         } else {
             buttonOK.setEnabled(false);
-            new CreateFile(e, textField.getText(), type).execute();
+            new CreateFile(e, textField.getText()).execute();
             dispose();
         }
     }
@@ -111,6 +106,7 @@ public class CreateFileDialog extends JDialog {
         tv_presenter.setText(state.getValue(SUPER_PRESENTER));
         tv_activity.setText(state.getValue(SUPER_VIEW_ACTIVITY));
         tv_fragment.setText(state.getValue(SUPER_VIEW_FRAGMENT));
+        onSelectModel(state.getValue(TYPE, TYPE_ACTIVITY));
     }
 
 
