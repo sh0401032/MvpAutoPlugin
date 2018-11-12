@@ -79,6 +79,22 @@ public class CreateFileDialog extends JDialog {
             Messages.showErrorDialog("Generation failed, " +
                             "your must enter class name",
                     "Class Name is null");
+        } else if (TextUtils.isEmpty(tv_iview.getText())) {
+            Messages.showErrorDialog("Generation failed, " +
+                            "your must enter super view",
+                    "Class Name is null");
+        } else if (TextUtils.isEmpty(tv_presenter.getText())) {
+            Messages.showErrorDialog("Generation failed, " +
+                            "your must enter super presenter",
+                    "Class Name is null");
+        } else if (TextUtils.isEmpty(tv_activity.getText())) {
+            Messages.showErrorDialog("Generation failed, " +
+                            "your must enter super activity",
+                    "Class Name is null");
+        } else if (TextUtils.isEmpty(tv_fragment.getText())) {
+            Messages.showErrorDialog("Generation failed, " +
+                            "your must enter super fragment",
+                    "Class Name is null");
         } else {
             buttonOK.setEnabled(false);
             new CreateFile(e, textField.getText()).execute();
