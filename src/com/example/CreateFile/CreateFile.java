@@ -64,22 +64,22 @@ public class CreateFile extends WriteCommandAction.Simple {
     }
 
     private void createContract() {
-        directoryService.createClass(directory, className, "MVPContract", false, templateProperties);
+        directoryService.createClass(directory, className, "MVPContract", true, templateProperties);
     }
 
     private void createActivity() {
-        directoryService.createClass(directory, className, "MVPActivity", false, templateProperties);
+        directoryService.createClass(directory, className, "MVPActivity", true, templateProperties);
     }
 
     private void createModel() {
-        directoryService.createClass(directory, className, "MVPModel", false, templateProperties);
+        directoryService.createClass(directory, className, "MVPModel", true, templateProperties);
     }
 
     private void createPresenter() {
-        directoryService.createClass(directory, className, "MVPPresenter", false, templateProperties);
+        directoryService.createClass(directory, className, "MVPPresenter", true, templateProperties);
     }
 
     private void createFragment() {
-        directoryService.createClass(directory, className, "MVPFragment", false, templateProperties);
+        directoryService.createClass(directory, className, "MVPFragment", true, templateProperties);
     }
 }

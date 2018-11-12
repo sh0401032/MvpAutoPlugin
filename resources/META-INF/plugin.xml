@@ -29,13 +29,13 @@
         <!--<internalFileTemplate name="Text1"/>-->
     <!--</extensions>-->
     <!--<extensions defaultExtensionNs="com.intellij">-->
-        <!--<applicationConfigurable instance="com.example.config.FileConfig"/>-->
+        <!--<projectConfigurable instance="com.example.UI.ConfigFilePanel" id="com.example.UI.ConfigFilePanel"/>-->
     <!--</extensions>-->
     <!--<application-components>-->
     <!--</application-components>-->
     <actions>
         <!-- Add your actions here -->
-        <action id="MvpPlugin.CreateFile" class="com.example.action.CreateFileAction" text="NewMVPFile"
+        <action id="MvpAutoPlugin.CreateFile" class="com.example.action.CreateFileAction" text="NewMVPFile"
                 description="CreateFile">
             <add-to-group group-id="NewGroup" anchor="first"/>
         </action>

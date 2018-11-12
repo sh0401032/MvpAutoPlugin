@@ -1,7 +1,7 @@
 package com.example.config;
 
 
-import com.example.UI.ConfigFileDialog;
+import com.example.UI.ConfigFilePanel;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.ide.util.TreeClassChooser;
 import com.intellij.ide.util.TreeClassChooserFactory;
@@ -24,7 +24,7 @@ import static com.example.config.Config.*;
 public class FileConfig implements SearchableConfigurable {
 
     public PropertiesComponent state;
-    public ConfigFileDialog mCp;
+    public ConfigFilePanel mCp;
     public Project mProject;
     public TreeClassChooserFactory classChooserFactory;
 
@@ -51,7 +51,7 @@ public class FileConfig implements SearchableConfigurable {
         }
         classChooserFactory = TreeClassChooserFactory.getInstance(mProject);
         state = PropertiesComponent.getInstance(mProject);
-        mCp = new ConfigFileDialog();
+      //  mCp = new ConfigFilePanel();
         //loadValues();
         return mCp.contentPanel;
     }
